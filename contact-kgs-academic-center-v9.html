@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — KGS Academic Center</title>
+  <link rel="stylesheet" href="kgs-theme-v9-footer-exact_updated.css">
+</head>
+<body>
+<header class="header">
+<div class="container navbar">
+<div class="brand">
+<img alt="KGS Academic Support Services Monroe University Logo" class="logo" src="kgslogo.png"/>
+<div class="title">KGS Academic Support Services Monroe University</div>
+</div>
+<nav aria-label="Primary" class="site-nav">
+<a href="kgs-page-v9-footer-exact.html">Home</a>
+<a href="Academic Center_Flyer_2.pdf">Scheduling</a>
+<a href="https://outlook.office.com/bookwithme/user/1c71435a442b4148a47ac7a8104f625f@monroeu.edu?anonymous&amp;ismsaljsauthenabled&amp;ep=pcard">Book Your appointment</a>
+
+        
+</nav>
+</div>
+</header>
+
+<main class="container" style="padding:22px 20px">
+  <section aria-label="Contact KGS" style="max-width:960px;margin:0 auto">
+    <h1 class="section-title" style="border-bottom:3px solid #f5c242;padding-bottom:8px;margin-top:8px">Contact KGS Academic Center</h1>
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:start">
+      <div class="card" style="padding:18px">
+        <h2 style="margin:0 0 8px 0">Request Information</h2>
+        <form class="kgs-form" id="kgsContactForm" novalidate>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label for="firstName"><strong>First Name</strong></label>
+              <input id="firstName" name="firstName" required placeholder="First Name">
+            </div>
+            <div>
+              <label for="lastName"><strong>Last Name</strong></label>
+              <input id="lastName" name="lastName" required placeholder="Last Name">
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label for="email"><strong>Email</strong></label>
+              <input id="email" name="email" type="email" required placeholder="name@example.com">
+            </div>
+            <div>
+              <label for="phone"><strong>Phone</strong></label>
+              <input id="phone" name="phone" type="tel" placeholder="(xxx) xxx-xxxx">
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label for="campus"><strong>Campus</strong></label>
+              <select id="campus" name="campus" required>
+                <option value="">Select campus…</option>
+                <option>New Rochelle</option>
+                <option>Bronx</option>
+                <option>Online</option>
+              </select>
+            </div>
+            <div>
+              <label for="program"><strong>Program of Interest</strong></label>
+              <select id="program" name="program" required>
+                <option value="">Select a program…</option>
+                <option>Computer Science</option>
+                <option>Data Science</option>
+                <option>Business</option>
+                <option>Healthcare</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="message"><strong>Message</strong></label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help…"></textarea>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+          <div class="success" id="successMsg" style="display:none;margin-top:10px;padding:10px 12px;background:#e6ffed;border:1px solid #b7efc5;border-radius:8px">Thanks! Your request has been recorded. We’ll get back to you at the email provided.</div>
+        </form>
+      </div>
+      <aside class="card" style="padding:18px">
+        <h2 style="margin:0 0 8px 0">Contact Details</h2>
+        <p><strong>Email:</strong> <a href="mailto:kgsacdemic@monroeu.edu">kgsacdemic@monroeu.edu</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+19147406691">914-740-6691</a><br><a href="tel:+19147406526">914-740-6526</a><br><a href="tel:+19147406714">914-740-6714</a></p>
+        <p><strong>Virtual Help:</strong> <a href="Academic Center_Flyer_2.pdf" target="_blank" rel="noopener">Open Scheduler</a></p>
+        <p>For University-wide inquiries, visit the <a href="https://www.monroeu.edu/contact-us" target="_blank" rel="noopener">Monroe University Contact page</a>.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var form=document.getElementById('kgsContactForm');
+  var ok=document.getElementById('successMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.firstName.value || !form.lastName.value || !form.email.value || !form.campus.value || !form.program.value){
+      alert('Please complete all required fields.');
+      return;
+    }
+    ok.style.display='block';
+    var body=encodeURIComponent(
+      'First Name: '+form.firstName.value+'\n'+
+      'Last Name: '+form.lastName.value+'\n'+
+      'Email: '+form.email.value+'\n'+
+      'Phone: '+form.phone.value+'\n'+
+      'Campus: '+form.campus.value+'\n'+
+      'Program: '+form.program.value+'\n\n'+
+      'Message:\n'+form.message.value
+    );
+    window.location.href='mailto:kgsacdemic@monroeu.edu?subject=KGS%20Contact%20Request&body='+body;
+    form.reset();
+  });
+});
+</script>
+
+<footer aria-label="Site footer" class="footer exact-footer" role="contentinfo">
+<div class="ef-wrap">
+<div class="ef-grid">
+<!-- Left block -->
+<section aria-label="Research Guides and Support" class="ef-left">
+<h3 class="ef-heading">Research Guides &amp; Support</h3>
+<div class="ef-left-row">
+<img alt="Monroe University" class="ef-logo" src="monroelogo.jpg">
+<div aria-hidden="true" class="ef-vrule"></div>
+<ul class="ef-primary-links">
+<li><a href="https://www.monroeu.edu/" rel="noopener" target="_blank">Monroe College Website</a></li>
+<li><a href="https://www.monroeu.edu/academics" rel="noopener" target="_blank">Academic &amp; Research</a></li>
+</ul>
+</img></div>
+</section>
+<!-- Right block -->
+<section aria-label="Quick Links" class="ef-right">
+<h3 class="ef-heading">Quick Links</h3>
+<div class="ef-ql-grid">
+<ul>
+<li><a href="https://outlook.office.com/bookwithme/user/1c71435a442b4148a47ac7a8104f625f@monroeu.edu?anonymous&amp;ismsaljsauthenabled&amp;ep=pcard" rel="noopener" target="_blank">Book Your Appointment</a></li>
+ <li><a href="https://www.monroeu.edu/info/current-student-events" target="_blank" rel="noopener">Current Student events</a></li>
+              <li><a href="https://monroeuniversity.libguides.com/e-resources" target="_blank" rel="noopener">Citation Tools</a></li>
+            </ul>
+            <ul>
+              <li><a href="https://www.monroeu.edu/meet-monroe" target="_blank" rel="noopener">Meet Monroe</a></li>
+              <li><a href="https://www.monroeu.edu/student-life" target="_blank" rel="noopener">Monroe Student Life</a></li>
+              <li><a href="https://www.monroeu.edu/our-formula-success" target="_blank" rel="noopener">Monroe Success Formula</a></li>
+</ul>
+</div>
+</section>
+</div>
+<hr aria-hidden="true" class="ef-rule"/>
+<div class="ef-bottom">
+<small>© 2025 Monroe University — KGS Academic Center. All rights reserved.</small>
+</div>
+</div>
+</footer>
+</body>
+</html>

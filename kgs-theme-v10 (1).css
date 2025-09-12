@@ -1,0 +1,132 @@
+:root{
+  --blue-950:#08162c;
+  --blue-900:#0e3a75;
+  --blue-850:#0c2f60;
+  --blue-800:#0d2860;
+  --blue-700:#133f86;
+  --gold-400:#f5c242;
+  --gold-500:#f0b500;
+  --ink:#0a0a0a;
+  --gray-100:#f8fafc;
+  --gray-200:#f3f4f6;
+  --gray-300:#e5e7eb;
+  --gray-400:#cbd5e1;
+  --white:#ffffff;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:"Times New Roman", Times, serif;color:var(--ink);background:#fff}
+
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.header{background:linear-gradient(180deg,var(--blue-900),var(--blue-850));color:#fff;border-bottom:4px solid var(--blue-700)}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{height:40px;width:auto}
+.title{font-weight:bold;font-size:clamp(22px,2.6vw,32px);letter-spacing:.2px}
+
+/* Site nav */
+.site-nav{display:flex;gap:22px;align-items:center}
+.site-nav a{color:#e6ecff;text-decoration:none;font-size:16px;line-height:1.2;position:relative;padding-bottom:4px}
+.site-nav a:hover::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold-500)}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--blue-850),var(--blue-900));color:#fff;padding:18px 0 28px}
+.hero-top{display:grid;grid-template-columns:1fr; justify-items:center; text-align:center}
+.hero-top .welcome-title{margin:8px 0 4px; text-align:center}
+.hero-top .welcome-title::after{content:""; display:block; width:120px; height:3px; background:var(--gold-500); margin:10px auto 0; border-radius:2px}
+
+.hero-bottom{display:grid;grid-template-columns:1fr 520px;gap:28px;margin-top:16px;align-items:start}
+.search-cta{display:flex;gap:10px;align-items:center;max-width:760px}
+.search-cta input{flex:1;padding:16px 18px;border:none;border-radius:999px}
+.search-cta button{padding:16px 24px;border:none;border-radius:999px;background:var(--gold-500);color:#1a1a1a;font-weight:bold;cursor:pointer}
+
+/* Live search results area */
+.search-results{margin-top:8px; font-size:14px; background:var(--gray-100); color:#111; border:1px solid var(--gray-300); border-radius:8px; padding:8px 12px}
+.match{outline:3px solid var(--gold-400); outline-offset:2px; border-radius:6px}
+
+/* Live Help box inside hero (left) */
+.livehelp-box{background:#fff;border:2px solid var(--gold-400);border-radius:16px;padding:18px 22px;width:min(560px,95%);text-align:center;color:#111;box-shadow:0 6px 18px rgba(0,0,0,.06);margin:4px 0 12px}
+.livehelp-link{display:inline-block;margin-top:10px;padding:12px 20px;background:var(--blue-700);color:#fff;border-radius:999px;text-decoration:none;font-weight:bold}
+
+/* Hero video (right) */
+.video-hero{position:relative;overflow:hidden;border-radius:16px;box-shadow:0 8px 22px rgba(0,0,0,.25);background:#000;width:520px;aspect-ratio:16/9;max-width:100%}
+.video-hero video{width:100%;height:100%;display:block;object-fit:cover;border:0}
+
+/* Sections */
+.section{padding:34px 0}
+.section-title{margin:0 0 18px 0;font-size:28px;border-bottom:3px solid var(--gold-400);padding-bottom:8px}
+.grid{display:grid;gap:18px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border:1px solid var(--gray-300);border-radius:12px;padding:22px;box-shadow:0 1px 0 rgba(0,0,0,.02);transition:transform .2s ease, box-shadow .2s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.08)}
+.btn{display:inline-block;padding:10px 14px;background:var(--blue-700);color:#fff;border-radius:8px;text-decoration:none}
+.btn:hover{opacity:.9}
+
+.bullet-links{list-style:disc; padding-left:20px}
+.bullet-links a{color:var(--blue-800); text-decoration:none}
+.bullet-links a:hover{text-decoration:underline}
+
+/* Footer */
+.footer{position:relative;background:#000033;color:#e6ecff;margin-top:24px;padding:26px 0 0}
+.footer::before{content:"";position:absolute;left:0;right:0;top:-22px;height:22px;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="22" viewBox="0 0 1200 22" preserveAspectRatio="none"><path d="M0,22 C300,0 900,0 1200,22 L1200,22 L0,22 Z" fill="%23f5c242"/></svg>') center/cover no-repeat}
+.columns{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.footer a{color:#e6ecff}
+.footer-bottom{background:var(--blue-950);margin-top:18px;padding:14px 20px;text-align:center;font-size:14px;border-top:1px solid rgba(255,255,255,.08)}
+
+/* ===== EXACT footer style ===== */
+.exact-footer{
+  background: linear-gradient(180deg, #103a74 0%, #0b2b57 100%);
+  color:#eaf0ff;
+}
+.exact-footer a{ color:#f5c242; text-decoration:none; }
+.exact-footer a:hover{ text-decoration:underline; }
+
+.ef-wrap{ max-width:1200px; margin:0 auto; padding:24px 28px; }
+.ef-grid{
+  display:grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap:48px;
+  align-items:start;
+}
+
+/* Headings */
+.ef-heading{ margin:0 0 12px 0; font-weight:700; color:#fff; font-size:22px; }
+
+/* Left block row: logo | vrule | links */
+.ef-left-row{
+  display:grid;
+  grid-template-columns: auto 1px 1fr;
+  align-items:center;
+  gap:24px;
+}
+.ef-logo{ height:68px; width:auto; display:block; }
+.ef-vrule{ width:1px; height:56px; background:rgba(255,255,255,.5); }
+
+.ef-primary-links{
+  list-style:none; margin:0; padding:0; display:grid; gap:8px;
+}
+.ef-primary-links a{ color:#f5c242; font-size:18px; }
+.ef-primary-links a:hover{ color:#ffd66c; }
+
+/* Right block quick links (two columns) */
+.ef-ql-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+.ef-ql-grid ul{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+.ef-ql-grid a{ color:#eaf0ff; text-decoration:none; }
+.ef-ql-grid a:hover{ text-decoration:underline; }
+
+/* Divider and bottom line */
+.ef-rule{ border:0; border-top:1px solid rgba(255,255,255,.25); margin:22px 0; }
+.ef-bottom{ text-align:center; font-size:13px; color:#dfe6ff; }
+
+/* Responsive */
+@media (max-width:980px){
+  .hero-bottom{grid-template-columns:1fr}
+  .video-hero{width:100%}
+  .grid-3{grid-template-columns:1fr}
+  .columns{grid-template-columns:1fr}
+  .ef-grid{ grid-template-columns:1fr; gap:28px; }
+  .ef-logo{ height:56px; }
+}
