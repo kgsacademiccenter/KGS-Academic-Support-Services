@@ -5,6 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KGS Academic Support Services Monroe University</title>
   <link rel="stylesheet" href="kgs-theme-v9-footer-exact.css" />
+  <style>
+    /* === Popup & Workshops section styling === */
+    .workshops-section {
+      padding: 40px 0;
+      text-align: center;
+      background: linear-gradient(180deg,#f9fbff,#f2f6ff);
+      animation: fadeUp 1s ease;
+    }
+    .workshops-section h2 {
+      font-size: 28px;
+      color: #0e3a75;
+      margin-bottom: 24px;
+      border-bottom: 3px solid #f5c242;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    .workshop-card {
+      background: #fff;
+      border: 1px solid #e0e6f0;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.08);
+      margin: 18px auto;
+      max-width: 680px;
+      padding: 22px;
+      transition: transform .3s ease;
+    }
+    .workshop-card:hover { transform: translateY(-2px); }
+    .workshop-title { font-size: 20px; color: #0e3a75; margin: 0 0 8px 0; font-weight: bold; }
+    .workshop-desc { margin: 0 0 12px 0; color: #333; }
+    .workshop-btn {
+      background: #f5c242;
+      color: #0b2345;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Popups */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    .popup {
+      background: #fff;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 720px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      position: relative;
+      animation: fadeIn 0.3s ease;
+      padding-bottom: 20px;
+    }
+    .popup-header {
+      background: #0e3a75;
+      color: #fff;
+      padding: 12px 0;
+      font-size: 20px;
+      font-weight: bold;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+    .popup img {
+      width: 100%;
+      height: auto;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+    .popup .qr-box {
+      margin-top: 10px;
+    }
+    .popup .qr-box img {
+      width: 100px;
+      height: 100px;
+      margin: 10px auto;
+      display: block;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 14px;
+      background: #f5c242;
+      color: #0b2345;
+      border: none;
+      border-radius: 50%;
+      width: 28px; height: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn { from {opacity:0; transform: scale(0.95);} to {opacity:1; transform: scale(1);} }
+    @keyframes fadeUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -28,29 +129,22 @@
       <div class="hero-top">
         <h1 class="welcome-title">Welcome to KGS Academic Support Services</h1>
       </div>
-
       <div class="hero-bottom">
         <div class="hero-copy">
           <div class="hero-intro">
             <h2>Research Guides &amp; Support</h2>
             <p>Find research guides, tutoring help, scheduling tools, and academic policies—curated for Monroe University students.</p>
           </div>
-
           <form class="search-cta" role="search" aria-label="Site search">
             <input id="q" name="q" type="search" placeholder="Type to search…" />
             <button type="submit">Search</button>
           </form>
-
           <div class="livehelp-box">
             <h2 style="margin:0 0 8px 0;color:#0b2345">Book Your Appointment</h2>
             <p style="margin:0">Our virtual support desk provides real-time academic assistance for your coursework and research needs.</p>
-            <!-- Updated live help link -->
-            <a href="https://outlook.office.com/bookwithme/user/1c71435a442b4148a47ac7a8104f625f@monroeu.edu?anonymous&ismsaljsauthenabled&ep=pcard" target="_blank" class="livehelp-link">
-              CLICK HERE FOR LIVE HELP
-            </a>
+            <a href="https://outlook.office.com/bookwithme/user/1c71435a442b4148a47ac7a8104f625f@monroeu.edu?anonymous&ismsaljsauthenabled&ep=pcard" target="_blank" class="livehelp-link">CLICK HERE FOR LIVE HELP</a>
           </div>
         </div>
-
         <div class="video-hero" aria-label="Monroe University highlights">
           <video src="kgs%20video.mp4" autoplay muted loop playsinline controls poster="slide1.jpg">
             Sorry, your browser does not support embedded videos.
@@ -59,18 +153,290 @@
       </div>
     </div>
   </section>
+<!-- === Workshops Section === -->
+<section class="workshops-section">
+  <h2 class="floating-title">Upcoming Workshops</h2>
 
-  <main id="main" class="container">
+  <div class="workshop-row">
+    <!-- Graduate Leadership Training Workshop -->
+    <div class="workshop-card">
+      <div class="workshop-title">Graduate Leadership Training Workshop</div>
+      <p class="workshop-desc">Scan the QR to register or click below for more info.</p>
+      <div class="qr-box">
+        <img src="Graduate Leadership.jpg" alt="QR Code - Leadership Workshop">
+      </div>
+      <button class="workshop-btn" onclick="openPopup('popup1')">More Info</button>
+    </div>
+
+    <!-- Mastering Your APA Writing Style Workshop -->
+    <div class="workshop-card">
+      <div class="workshop-title">Mastering Your APA Writing Style Workshop</div>
+      <p class="workshop-desc">Scan the QR to register or click below for more info.</p>
+      <div class="qr-box">
+        <img src="Mastering APA.jpg" alt="QR Code - APA Workshop">
+      </div>
+      <button class="workshop-btn" onclick="openPopup('popup2')">More Info</button>
+    </div>
+  </div>
+</section>
+
+<!-- === Popups === -->
+<div class="popup-overlay" id="popup1">
+  <div class="popup">
+    <div class="popup-header">Graduate Leadership Training Workshop</div>
+    <button class="close-btn" onclick="closePopup('popup1')">×</button>
+    <img src="WhatsApp Image 2025-11-07 at 11.20.06_3507a927.jpg" 
+         alt="Graduate Leadership Training Workshop Flyer">
+  </div>
+</div>
+
+<div class="popup-overlay" id="popup2">
+  <div class="popup">
+    <div class="popup-header">Mastering Your APA Writing Style Workshop</div>
+    <button class="close-btn" onclick="closePopup('popup2')">×</button>
+    <img src="WhatsApp Image 2025-11-07 at 11.20.07_db372c25.jpg" 
+         alt="APA Writing Workshop Flyer">
+  </div>
+</div>
+
+<script>
+  // === FIXED: Ensures popups open and close reliably ===
+  document.addEventListener("DOMContentLoaded", () => {
+    const popups = document.querySelectorAll(".popup-overlay");
+
+    // Allow clicking on overlay to close
+    popups.forEach(p => {
+      p.addEventListener("click", e => {
+        if (e.target.classList.contains("popup-overlay")) {
+          closePopup(p.id);
+        }
+      });
+    });
+
+    // Ensure popups are always above all layers
+    popups.forEach(p => p.style.zIndex = "9999");
+  });
+
+  function openPopup(id) {
+    const popup = document.getElementById(id);
+    if (popup) {
+      popup.style.display = "flex";
+      popup.style.zIndex = "9999";
+    }
+  }
+
+  function closePopup(id) {
+    const popup = document.getElementById(id);
+    if (popup) popup.style.display = "none";
+  }
+</script>
+
+<style>
+  .workshops-section {
+    padding: 30px 0 60px;
+    text-align: center;
+    background: linear-gradient(180deg,#f9fbff,#f2f6ff);
+    animation: fadeUp 1s ease;
+  }
+
+  /* Floating glowing title */
+  .floating-title {
+    font-size: 32px;
+    color: #0e3a75;
+    margin-bottom: 30px;
+    text-shadow: 0 0 6px rgba(245,194,66,0.8), 0 0 12px rgba(245,194,66,0.6);
+    animation: floatGlow 3s ease-in-out infinite alternate;
+  }
+  @keyframes floatGlow {
+    from { transform: translateY(0px); text-shadow: 0 0 6px rgba(245,194,66,0.8); }
+    to { transform: translateY(-6px); text-shadow: 0 0 18px rgba(245,194,66,1); }
+  }
+
+  /* Compact row layout */
+  .workshop-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+
+  .workshop-card {
+    background: #ffffff;
+    border: 1px solid #e0e6f0;
+    border-radius: 16px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.1);
+    width: 360px;
+    margin: 0 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Hover glow animation */
+  .workshop-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(245,194,66,0.5);
+  }
+
+  .workshop-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(120deg, #f5c242, #0e3a75, #f5c242);
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderGlow 6s linear infinite;
+    opacity: 0.3;
+  }
+  @keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .workshop-title {
+    font-size: 20px;
+    color: #0e3a75;
+    margin: 0 0 8px 0;
+    font-weight: bold;
+  }
+
+  .workshop-desc {
+    margin: 0 0 12px 0;
+    color: #333;
+  }
+
+  .qr-box img {
+    width: 100px;
+    height: 100px;
+    margin: 8px auto 14px;
+    display: block;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+  }
+
+  .qr-box img:hover {
+    transform: scale(1.1);
+  }
+
+  .workshop-btn {
+    background: #f5c242;
+    color: #0b2345;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    position: relative;
+    z-index: 10; /* ensures click area is on top */
+  }
+
+  .workshop-btn:hover {
+    background: #0e3a75;
+    color: #fff;
+    transform: scale(1.05);
+  }
+
+  /* Popups */
+  .popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* ensure it’s above everything */
+  }
+
+  .popup {
+    background: #fff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 720px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+    padding-bottom: 20px;
+  }
+
+  .popup-header {
+    background: #0e3a75;
+    color: #fff;
+    padding: 12px 0;
+    font-size: 20px;
+    font-weight: bold;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .popup img {
+    width: 85%;
+    height: auto;
+    margin: 18px auto 10px;
+    border-radius: 12px;
+    display: block;
+    object-fit: contain;
+    max-height: 80vh;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px; right: 14px;
+    background: #f5c242;
+    color: #0b2345;
+    border: none;
+    border-radius: 50%;
+    width: 28px; height: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  @keyframes fadeIn {
+    from {opacity:0; transform: scale(0.95);}
+    to {opacity:1; transform: scale(1);}
+  }
+
+  @keyframes fadeUp {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+
+  /* Responsive Fix */
+  @media (max-width: 768px) {
+    .workshop-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    .workshop-card { width: 90%; margin: 10px 0; }
+  }
+</style>
+
+
+
+   <main id="main" class="container">
     <section class="section featured" id="featured">
       <h2 class="section-title">Featured</h2>
       <div class="grid grid-3">
-        <article class="card">
-          <h3>Research Databases</h3>
-          <p>Access journals, ebooks, and datasets vetted for Monroe coursework and theses.</p>
-          <div class="actions">
-            <a class="btn" href="https://monroeuniversity.libguides.com/e-resources" target="_blank">Browse databases</a>
-          </div>
-        </article>
+         <article class="card">
+  <h3>🌟 Share Your Opinion</h3>
+  <p>Your feedback matters to us! Please take a moment to share your thoughts by clicking the button below.</p>
+  
+  <div class="actions">
+    <a class="btn" href="Academic Center_Flyer_2.pdf" target="_blank">Take the Survey</a>
+  </div>
+</article>
+        
         <article class="card">
           <h3>Book Tutoring</h3>
           <p>Schedule 1:1 sessions with KGS tutors for programming, stats, and writing.</p>
@@ -86,7 +452,14 @@
   <a class="btn" href="APA Format 7th Edition.pdf" target="_blank">Download APA Template</a>
           </div>
         </article>
-      </div>
+        <article class="card">
+          <h3>Research Databases</h3>
+          <p>Access journals, ebooks, and datasets vetted for Monroe coursework and theses.</p>
+          <div class="actions">
+            <a class="btn" href="https://monroeuniversity.libguides.com/e-resources" target="_blank">Browse databases</a>
+          </div>
+        </article>
+              </div>
     </section>
 
     <section class="section">
